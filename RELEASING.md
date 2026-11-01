@@ -1,8 +1,8 @@
 # Releasing Takia
 
-The 2026-10-30 version bumps are unpublished development versions. Do not publish
-or create release tags for this change. Library, example and benchmark locks are
-local ignored files; generate and validate them without adding them to Git.
+Version 0.15.1 is the coordinated engine release for Glory and Sapid 0.6.1.
+Use the gated release workflow below. Library, example and benchmark locks stay
+local and ignored; generate and validate them without adding them to Git.
 
 
 `release.json` is the explicit dependency order and namespace allowlist. Versions remain
