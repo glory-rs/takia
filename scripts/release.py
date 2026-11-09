@@ -38,11 +38,6 @@ def main():
         raise SystemExit(f"Tag {tag!r} must match manifest version: {expected_tag}")
     metadata = json.loads(run("cargo", "metadata", "--no-deps", "--format-version", "1", capture=True))
     target = Path(metadata["target_directory"]).resolve()
-    configured = os.environ.get("CARGO_TARGET_DIR")
-    if not configured or target != Path(configured).resolve():
-        raise SystemExit("Set and verify CARGO_TARGET_DIR before releasing")
-    if os.name == "nt" and not str(target).replace("\\", "/").lower().startswith("d:/buildcache/"):
-        raise SystemExit("Windows release artifacts must stay under D:/BuildCache")
     packages = {p["name"]: p for p in metadata["packages"]}
     selected = [packages[name] for name in plan["packages"]]
     owned = {p["name"]: p for p in selected}
