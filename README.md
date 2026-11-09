@@ -23,13 +23,14 @@ The layout tree type is `TakiaTree`; the built-in tree feature is `takia_tree`. 
 ## Branches and releases
 
 - `main` contains this project's maintained implementation, namespace and release tooling.
-- `upstream-main` mirrors the upstream default branch exactly. Its scheduled/manual sync never updates `main`.
+- `upstream-main` is a historical upstream snapshot. This maintained repository does not automatically write to it.
 - Upstream changes are reviewed before integration into maintained `main`.
 - Release tags use `takia-v0.15.0`, preserving inherited upstream tags.
 
 See [UPSTREAM.md](UPSTREAM.md) for provenance and [RELEASING.md](RELEASING.md) for
 the explicit dependency order, checks and publication procedure. Supported platform
 checks are compilation/test evidence and do not imply unperformed device or OS IME acceptance.
+See [the upstream review](docs/upstream-integration.md) for selected patches and compatibility decisions.
 
 ## Example
 
