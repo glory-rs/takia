@@ -33,8 +33,9 @@ baseline are not re-applied.
 
 ## Source tracking
 
-The organization plans to track the original project as `glory-rs/taffy` and keep
-Takia independent of that fork network. The official upstream remains
+The organization tracks the original project in the separate
+[`glory-rs/taffy`](https://github.com/glory-rs/taffy) fork. Takia's implementation
+is maintained separately. The official upstream remains
 <https://github.com/DioxusLabs/taffy>. Maintainers fetch it read-only, review the
 diff and port selected commits on a maintained branch. There is no scheduled
 write to this repository's historical `upstream-main` snapshot.
