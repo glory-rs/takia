@@ -214,7 +214,7 @@ impl<NodeContext> TraverseTree for TakiaTree<NodeContext> {}
 
 // CacheTree impl for TakiaTree
 impl<NodeContext> CacheTree for TakiaTree<NodeContext> {
-    fn cache_get(&mut self, node_id: NodeId, input: &LayoutInput) -> Option<LayoutOutput> {
+    fn cache_get(&self, node_id: NodeId, input: &LayoutInput) -> Option<LayoutOutput> {
         self.nodes[node_id.into()].cache.get(input)
     }
 
@@ -452,7 +452,7 @@ impl<NodeContext, MeasureFunction> CacheTree for TakiaView<'_, NodeContext, Meas
 where
     MeasureFunction: FnMut(LayoutInput, NodeId, Option<&mut NodeContext>, &Style) -> LayoutOutput,
 {
-    fn cache_get(&mut self, node_id: NodeId, input: &LayoutInput) -> Option<LayoutOutput> {
+    fn cache_get(&self, node_id: NodeId, input: &LayoutInput) -> Option<LayoutOutput> {
         self.takia.nodes[node_id.into()].cache.get(input)
     }
 
