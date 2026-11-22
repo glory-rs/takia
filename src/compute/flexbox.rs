@@ -3156,7 +3156,7 @@ mod balance {
         fn suffix_greedy_line_counts(&self) -> Vec<u32> {
             let item_count = self.item_count();
             let mut counts: Vec<u32> = new_vec_with_capacity(item_count + 1);
-            counts.extend(std::iter::repeat_n(0, item_count + 1));
+            counts.extend(core::iter::repeat_n(0, item_count + 1));
             // The (exclusive) end of the greedy first line of the suffix, which only moves
             // down as the suffix grows leftwards since lines starting earlier are larger
             let mut line_end = item_count;
@@ -3334,7 +3334,7 @@ mod balance {
         if line_count == item_count {
             // One item per line is the only division (this covers `flex-line-count` of at least
             // the item count as well as every item overflowing a line of its own)
-            item_counts.extend(std::iter::repeat_n(1, item_count));
+            item_counts.extend(core::iter::repeat_n(1, item_count));
             return item_counts;
         }
 
@@ -3357,9 +3357,9 @@ mod balance {
             prev.push(sizes.line_cost(start, item_count - 1));
         }
         let mut cur: Vec<f64> = new_vec_with_capacity(item_count);
-        cur.extend(std::iter::repeat_n(INFEASIBLE, item_count));
+        cur.extend(core::iter::repeat_n(INFEASIBLE, item_count));
         let mut opts: Vec<u32> = new_vec_with_capacity((line_count - 1) * item_count);
-        opts.extend(std::iter::repeat_n(0, (line_count - 1) * item_count));
+        opts.extend(core::iter::repeat_n(0, (line_count - 1) * item_count));
         for lines in 2..=line_count {
             // The remaining `lines - 1` lines need one item each, bounding this line's end
             let max_end = item_count - lines;

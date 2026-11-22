@@ -48,3 +48,5 @@ the actual target directory. Validate with `cargo test --locked --all-features`,
 `cargo fmt --all -- --check`. The existing fractional-flex/gap tests remain part
 of the complete suite. Build and release tooling honors the caller's normal
 Cargo and temporary-directory configuration.
+
+See the [2026-11-22 commit-by-commit review](upstream-review-20261122.md) for the next upstream range.

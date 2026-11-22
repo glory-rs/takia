@@ -18,6 +18,7 @@ license = "MIT"
 [dependencies]
 document-features = { version = "0.2.12", optional = true }
 serde = { version = "1.0.229", default-features = false, optional = true, features = ["serde_derive"] }
+rustc-hash = { version = "2", default-features = false, optional = true }
 slotmap = { version = "1.1.1", default-features = false, optional = true }
 smallvec = { version = "1.16.4", default-features = false, optional = true }
 cssparser = { version = "0.38.0", default-features = false, optional = true }
@@ -64,13 +65,13 @@ calc = []
 content_size = []
 ## Causes algorithms to stores detailed information of the nodes in TakiaTree, with only CSS Grid supporting this.
 detailed_layout_info = []
-## Use strict provenance APIs for pointer manipulation. Using this feature requires Rust 1.84 or higher.
+## Deprecated no-op: Takia always uses strict provenance APIs for pointer manipulation. Retained so that existing `features = ["strict_provenance"]` configurations keep compiling.
 strict_provenance = []
 
 #! ### Takia Tree
 
 ## Enable the built-in Takia node tree. See [`TakiaTree`](crate::TakiaTree).
-takia_tree = ["dep:slotmap"]
+takia_tree = ["dep:slotmap", "dep:rustc-hash"]
 
 #! ### Other
 
